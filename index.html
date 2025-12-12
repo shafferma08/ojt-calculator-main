@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OJT Card Calculator (MVP)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+
+  <style>
+    /* Base reset override */
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      margin: 0;
+      background-color: #f0f2f5;
+      color: #1a1a1a;
+    }
+
+    /* We will move most styles to index.css, keeping only critical overrides if necessary or just cleaning this block up later */
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1> Child Care Apprenticeship Program OJT Card Calculator</h1>
+  </header>
+
+
+
+  <!--Input Field Section-->
+  <div class="grid-container">
+
+    <div class="left-side">
+      <img class="logo" src="assets/pinellas-county-schools-logo (1).png" alt="Pinellas County Schools Logo">
+      <section class="flex-input-fields">
+
+        <div class="input-groups standalone">
+          <h3 class="flex-h3">O.J.T Record For: Month/Year</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Student Name</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Journey Person Name</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Student Signature</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Journey Person Signature</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Teacher Name</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Class Night</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Child Care Center Name</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+
+        <div class="input-groups">
+          <h3 class="flex-h3">Current Wage Per Hour $</h3>
+          <input class="input-boxes" placeholder="Input Here">
+        </div>
+      </section>
+
+
+
+      <!--Childcare logo and campus addresses-->
+      <section>
+        <img class="childcare-logo" src="assets/childcare-logo.jpeg" alt="childcare logo">
+
+        <div class="contact-row">
+          <div class="campus-info">
+            <h3 class="contact-h3">St. Petersburg Campus</h3>
+            <h3 class="contact-h3">901 34th St. S.</h3>
+            <h3 class="contact-h3">St. Petersburg, FL 33711</h3>
+          </div>
+
+          <div class="campus-info">
+            <h3 class="contact-h3">Clearwater Campus</h3>
+            <h3 class="contact-h3">6100 154th Ave. N.</h3>
+            <h3 class="contact-h3">Clearwater, FL 33760</h3>
+          </div>
+        </div>
+      </section>
+
+
+      <!--Work process schedule and hours-->
+      <section>
+        <div class="h4-group">
+          <h4>WORK PROCESS SCHEDULE</h4>
+          <h4>CHILD CARE DEVELOPMENT SPECIALIST</h4>
+          <h4>DOT CODE: 359.342-540</h4>
+        </div>
+
+        <div class="timecard-hours">
+          <ol>
+            <li>
+              <div class="show-ol">
+                <span class="left-text">SAFETY TRAINING</span>
+                <span class="right-text">50 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">HEALTH AND FIRST AID<br>CHILD ABUSE AND NEGLECT</span>
+                <span class="right-text">200 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">ADMINISTRATION PROCEDURES AND POLICIES</span>
+                <span class="right-text">20 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">CHILD NUTRITION CHILD HYGIENE</span>
+                <span class="right-text">1000 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">CHILD DEVELOPMENT OBSERVATION<br>CHILD DEVELOPMENT PROGRAM PLANNING</span>
+                <span class="right-text">1100 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">CHILD ACTIVITY SUPERVISION AND DIRECTION</span>
+                <span class="right-text">1450 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">CONSULTATION TECHNIQUES</span>
+                <span class="right-text">80 HOURS</span>
+              </div>
+            </li>
+
+            <li>
+              <div class="show-ol">
+                <span class="left-text">PROFESSIONALISM</span>
+                <span class="right-text">100 HOURS</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </section>
+
+    </div>
+
+
+    <!--Timecard-->
+    <div class="right-side">
+      <div class="controls">
+        <label>Month:
+          <input type="month" id="monthPicker" />
+        </label>
+        <div class="print-div">
+          <button id="clearBtn">Clear All</button>
+          <button class="print-button" onclick="window.print()"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+              height="16" fill="currentColor" class="bi bi-printer-fill" viewBox="0 0 16 16">
+              <path
+                d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm5 8H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z" />
+              <path
+                d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+            </svg>
+            Print / Save PDF
+          </button>
+        </div>
+
+      </div>
+
+      <table id="ojt">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Hours (or X)</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>Total Min</th>
+            <th>Total Hrs</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2">TOTALS (minutes)</td>
+            <td id="t1">0</td>
+            <td id="t2">0</td>
+            <td id="t3">0</td>
+            <td id="t4">0</td>
+            <td id="t5">0</td>
+            <td id="t6">0</td>
+            <td id="t7">0</td>
+            <td id="t8">0</td>
+            <td id="tMin">0</td>
+            <td id="tHrs">0</td>
+          </tr>
+          <tr>
+            <td colspan="2">DIVIDE BY 60 (hours)</td>
+            <td id="d1">0.00</td>
+            <td id="d2">0.00</td>
+            <td id="d3">0.00</td>
+            <td id="d4">0.00</td>
+            <td id="d5">0.00</td>
+            <td id="d6">0.00</td>
+            <td id="d7">0.00</td>
+            <td id="d8">0.00</td>
+            <td id="dMin">—</td>
+            <td id="dTot">0.00</td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <h2 class="print-h2">
+
+      </h2>
+    </div>
+  </div>
+
+  <script>
+    // --- NEW: official lookup (exact minutes per daily total) ---
+    const LOOKUP = {
+      330: [4, 17, 2, 82, 90, 120, 7, 8],
+      360: [4, 18, 2, 90, 100, 131, 7, 8],
+      390: [5, 19, 2, 98, 107, 141, 8, 10],
+      420: [5, 20, 2, 105, 118, 152, 8, 10],
+      450: [6, 23, 2, 113, 124, 162, 9, 11],
+      480: [6, 24, 2, 120, 132, 174, 10, 12],
+      510: [6, 25, 3, 129, 140, 185, 10, 12],
+      540: [7, 27, 3, 135, 148, 196, 10, 14],
+      570: [7, 29, 3, 143, 157, 207, 10, 14],
+      600: [7, 30, 3, 150, 165, 219, 12, 14],
+      630: [8, 31, 3, 158, 173, 228, 13, 16],
+      660: [8, 33, 3, 165, 182, 240, 13, 16],
+    };
+
+    // Keep percentages only as a fallback for non-standard totals
+    const PCT = [0.0125, 0.05, 0.005, 0.25, 0.275, 0.3625, 0.02, 0.025];
+
+    const rowsEl = document.getElementById('rows');
+    const monthPicker = document.getElementById('monthPicker');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function daysInMonth(yyyy, mm) { return new Date(yyyy, mm, 0).getDate(); }
+
+    // NEW: central distributor
+    function distributeByMinutes(totalMinutes) {
+      if (LOOKUP[totalMinutes]) return LOOKUP[totalMinutes].slice(); // exact match
+      // fallback: percent math; force exact sum via remainder
+      const raw = PCT.map(p => totalMinutes * p);
+      const out = raw.map((v, i) => (i < 7 ? Math.round(v) : 0));
+      const used = out.reduce((a, b) => a + b, 0);
+      out[7] = totalMinutes - used;
+      return out;
+    }
+
+    function buildTable(yyyy, mm) {
+      rowsEl.innerHTML = '';
+      const n = daysInMonth(yyyy, mm);
+      for (let d = 1; d <= n; d++) {
+        const tr = document.createElement('tr');
+
+        const tdDate = document.createElement('td');
+        tdDate.textContent = `${yyyy}-${String(mm).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+        tr.appendChild(tdDate);
+
+        const hours = document.createElement('input');
+        hours.type = 'text'; hours.placeholder = 'hours worked'; hours.style.width = '100px';
+        const tdHours = document.createElement('td'); tdHours.appendChild(hours); tr.appendChild(tdHours);
+
+        const catTds = Array.from({ length: 8 }, () => {
+          const td = document.createElement('td'); td.textContent = ''; return td;
+        });
+        catTds.forEach(td => tr.appendChild(td));
+
+        const tdMin = document.createElement('td'); tdMin.textContent = ''; tr.appendChild(tdMin);
+        const tdHrs = document.createElement('td'); tdHrs.textContent = ''; tr.appendChild(tdHrs);
+
+        hours.addEventListener('input', () => recalcRow(tr));
+        rowsEl.appendChild(tr);
+      }
+      recalcTotals();
+    }
+
+    function recalcRow(tr) {
+      const tds = tr.querySelectorAll('td');
+      const input = tr.querySelector('input').value.trim();
+      if (!input || input.toUpperCase() === 'X') {
+        for (let i = 2; i <= 9; i++) tds[i].textContent = '';
+        tds[10].textContent = '';
+        tds[11].textContent = '';
+        recalcTotals();
+        return;
+      }
+      const hrs = Number(input);
+      if (Number.isNaN(hrs) || hrs < 0) return;
+
+      const minutes = Math.round(hrs * 60);
+      const parts = distributeByMinutes(minutes); // <-- ONLY CHANGE THAT MATTERS
+
+      for (let i = 0; i < 8; i++) tr.children[2 + i].textContent = parts[i];
+      tds[10].textContent = minutes;
+      tds[11].textContent = (minutes / 60).toFixed(2);
+
+      recalcTotals();
+    }
+
+    function recalcTotals() {
+      const totals = Array(8).fill(0);
+      let tMin = 0, tHrs = 0;
+      rowsEl.querySelectorAll('tr').forEach(tr => {
+        for (let i = 0; i < 8; i++) {
+          const v = Number(tr.children[2 + i].textContent || 0);
+          totals[i] += v;
+        }
+        tMin += Number(tr.children[10].textContent || 0);
+        tHrs += Number(tr.children[11].textContent || 0);
+      });
+      for (let i = 0; i < 8; i++) {
+        document.getElementById('t' + (i + 1)).textContent = totals[i];
+        document.getElementById('d' + (i + 1)).textContent = (totals[i] / 60).toFixed(2);
+      }
+      document.getElementById('tMin').textContent = tMin;
+      document.getElementById('tHrs').textContent = tHrs.toFixed(2);
+      document.getElementById('dTot').textContent = (tMin / 60).toFixed(2);
+    }
+
+    monthPicker.addEventListener('change', e => {
+      const [y, m] = e.target.value.split('-').map(Number);
+      if (y && m) buildTable(y, m);
+    });
+
+    // default to current month
+    const today = new Date();
+    monthPicker.value = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`;
+    buildTable(today.getFullYear(), today.getMonth() + 1);
+
+    clearBtn.onclick = () => {
+      rowsEl.querySelectorAll('input').forEach(inp => inp.value = '');
+      rowsEl.querySelectorAll('tr').forEach(tr => recalcRow(tr));
+    };
+  </script>
+</body>
+
+</html>

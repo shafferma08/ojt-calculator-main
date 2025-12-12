@@ -1,0 +1,569 @@
+:root {
+    --primary: #162850;
+    /* PCS Navy */
+    --highlight: #ecb113;
+    /* PCS Yellow */
+    --accent: #a7b129;
+    /* PCS Green */
+
+    --bg: #f8f9fa;
+    /* Neutral Light */
+    --card-bg: #ffffff;
+    --text: #333333;
+    --border: #cbd5e1;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    margin: 0;
+    padding: 24px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-top: 24px;
+}
+
+h3,
+h4 {
+    margin: 0;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    /* Fixed width sidebar, responsive main */
+    gap: 24px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Left Sidebar Items */
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.logo {
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* Card Styles */
+.flex-input-fields,
+section {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Inputs Section */
+.flex-input-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    /* Override default */
+    width: 100%;
+}
+
+.input-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.flex-h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+}
+
+.input-boxes {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.input-boxes:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 3px rgba(236, 177, 19, 0.25);
+}
+
+/* Contact Info */
+.childcare-logo {
+    display: block;
+    max-width: 250px;
+    margin: 0 auto 16px auto;
+}
+
+.contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.campus-info h3 {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* Schedule List */
+.h4-group {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.h4-group h4 {
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.timecard-hours ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.timecard-hours li {
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.show-ol {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.right-text {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Right Side (Table) */
+.right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: auto;
+    /* Allow scroll on small screens */
+}
+
+/* Controls */
+.controls {
+    background: var(--card-bg);
+    padding: 16px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.print-div {
+    display: flex;
+    gap: 12px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#clearBtn {
+    background-color: #ef4444;
+    /* Red */
+    color: white;
+}
+
+.print-button {
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Table Styles - Modernized */
+#ojt {
+    width: 100%;
+    border-collapse: separate;
+    /* For rounded corners potentially, or cleaner look */
+    border-spacing: 0;
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+#ojt th,
+#ojt td {
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    background: transparent;
+    box-shadow: none;
+    /* Removed the heavy shadow */
+}
+
+#ojt thead th {
+    background-color: var(--primary);
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    border-color: #334155;
+}
+
+#ojt tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+#ojt tbody tr:hover {
+    background-color: #f0f4f8;
+    /* Light Navy Tint for hover */
+}
+
+#ojt input {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid transparent;
+    background: transparent;
+    text-align: center;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+#ojt input:focus {
+    border-color: var(--highlight);
+    background: white;
+    outline: none;
+}
+
+#ojt td {
+    text-align: center;
+}
+
+/* Align first two cols differently if needed, per original CSS? 
+   Original: th:first-child... text-align: left.
+   Let's keep date center but maybe inputs center.
+*/
+
+#ojt tfoot td {
+    font-weight: 700;
+    background-color: #e2e8f0;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        /* Stack */
+        max-width: 800px;
+    }
+
+    .left-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* Two columns for inputs/info on tablets */
+    }
+
+    .logo {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-side {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .print-div {
+        flex-direction: column;
+    }
+
+    body {
+        padding: 12px;
+    }
+}
+
+@media print {
+    @page {
+        margin: 4mm;
+        /* Moderate margins to maximize space */
+        size: landscape;
+    }
+
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+        font-size: 9pt;
+        /* Readable font size */
+        font-family: 'Inter', sans-serif;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Hide UI elements */
+    .controls,
+    .print-div,
+    .print-button,
+    #clearBtn {
+        display: none !important;
+    }
+
+    /* Header Adjustments */
+    header {
+        margin-bottom: 4px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid var(--primary);
+    }
+
+    header h1 {
+        display: block !important;
+        font-size: 13pt;
+        margin: 0;
+        color: black;
+        flex: 1;
+    }
+
+    /* Layout for Print */
+    .grid-container {
+        display: flex;
+        gap: 12px;
+        max-width: none;
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    /* Sidebar - contain it to ensure it fits */
+    .left-side {
+        width: 30%;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .right-side {
+        width: 70%;
+        overflow: visible;
+    }
+
+    /* Sections / Cards */
+    .flex-input-fields,
+    section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 6px;
+        background: white;
+        margin-bottom: 0;
+        /* Remove ext margin */
+    }
+
+    /* Inputs: 2 Columns to save height */
+    .flex-input-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 8px;
+        row-gap: 4px;
+    }
+
+    .input-groups.standalone {
+        grid-column: span 2;
+    }
+
+    .input-groups h3 {
+        font-size: 7.5pt;
+        margin-bottom: 1px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    .input-boxes {
+        height: 20px;
+        padding: 0 4px;
+        font-size: 8.5pt;
+        border: 1px solid #999;
+    }
+
+    /* LOGOS - Visible and Balanced */
+    .logo {
+        display: block;
+        max-width: 140px;
+        height: auto;
+        max-height: 45px;
+        margin: 0 auto 4px auto;
+    }
+
+    .childcare-logo {
+        display: block !important;
+        max-width: 90px;
+        height: auto;
+        max-height: 45px;
+        margin: 4px auto;
+    }
+
+    /* Address - Side by Side */
+    .contact-row {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .campus-info h3 {
+        font-size: 7pt;
+        line-height: 1.2;
+    }
+
+    /* WORK SCHEDULE LIST - 2 Columns to save huge vertical space */
+    .h4-group {
+        margin-bottom: 4px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 2px;
+    }
+
+    .h4-group h4 {
+        font-size: 7.5pt;
+        margin: 0;
+    }
+
+
+
+    .timecard-hours ol {
+        margin: 0;
+        padding-left: 15px;
+        column-count: 2;
+        /* KEY CHANGE: Split list into 2 columns */
+        column-gap: 15px;
+    }
+
+    .timecard-hours li {
+        font-size: 7pt;
+        margin-bottom: 2px;
+        break-inside: avoid;
+        /* Prevent split bullets */
+        line-height: 1.1;
+    }
+
+    .show-ol {
+        display: block;
+        /* Stack text inside LI if needed, or keep flex */
+    }
+
+    .left-text {
+        display: block;
+        font-weight: normal;
+    }
+
+    .right-text {
+        display: block;
+        font-weight: bold;
+        float: right;
+    }
+
+
+    /* Table - Optimized for max readability in available space */
+    #ojt {
+        box-shadow: none;
+        border: 2px solid #000;
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #ojt th,
+    #ojt td {
+        font-size: 8.5pt;
+        /* Good readability */
+        padding: 1px 4px;
+        border: 1px solid #000;
+        height: 17px;
+        /* Fixed efficient height */
+        line-height: 1.1;
+    }
+
+    #ojt thead th {
+        background-color: #eee !important;
+        color: black;
+        font-weight: 800;
+        font-size: 8pt;
+    }
+
+    #ojt input {
+        font-size: 9pt;
+        height: 100%;
+        border: none;
+        padding: 0;
+    }
+
+    /* Footer totals */
+    #ojt tfoot td {
+        font-size: 8.5pt;
+        font-weight: 800;
+        background-color: #eee !important;
+    }
+
+    * {
+        box-shadow: none !important;
+    }
+}
