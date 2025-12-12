@@ -42,24 +42,24 @@
           <input class="input-boxes" placeholder="Input Here">
         </div>
 
-        <div class="input-groups">
+        <div class="input-groups standalone">
           <h3 class="flex-h3">Student Name</h3>
           <input class="input-boxes" placeholder="Input Here">
         </div>
 
-        <div class="input-groups">
+        <div class="input-groups standalone">
+          <h3 class="flex-h3">Student Signature</h3>
+          <div class="signature-line"></div>
+        </div>
+
+        <div class="input-groups standalone">
           <h3 class="flex-h3">Journey Person Name</h3>
           <input class="input-boxes" placeholder="Input Here">
         </div>
 
-        <div class="input-groups">
-          <h3 class="flex-h3">Student Signature</h3>
-          <input class="input-boxes" placeholder="Input Here">
-        </div>
-
-        <div class="input-groups">
+        <div class="input-groups standalone">
           <h3 class="flex-h3">Journey Person Signature</h3>
-          <input class="input-boxes" placeholder="Input Here">
+          <div class="signature-line"></div>
         </div>
 
         <div class="input-groups">
@@ -247,9 +247,10 @@
         </tfoot>
       </table>
 
-      <h2 class="print-h2">
-
-      </h2>
+      <div class="footer-credit">
+        Created by <a href="https://clearwater.myptc.edu/programs/clearwater-full-time-programs/web-development"
+          target="_blank">Pinellas Technical College Web Development Students</a>
+      </div>
     </div>
   </div>
 
@@ -301,7 +302,7 @@
         tr.appendChild(tdDate);
 
         const hours = document.createElement('input');
-        hours.type = 'text'; hours.placeholder = 'hours worked'; hours.style.width = '100px';
+        hours.type = 'text'; hours.placeholder = 'hours worked'; hours.style.width = '130px';
         const tdHours = document.createElement('td'); tdHours.appendChild(hours); tr.appendChild(tdHours);
 
         const catTds = Array.from({ length: 8 }, () => {

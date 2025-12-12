@@ -124,6 +124,13 @@ section {
     box-shadow: 0 0 0 3px rgba(236, 177, 19, 0.25);
 }
 
+.signature-line {
+    width: 100%;
+    height: 38px;
+    border-bottom: 1px solid var(--text);
+    margin-top: auto;
+}
+
 /* Contact Info */
 .childcare-logo {
     display: block;
@@ -230,6 +237,23 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.footer-credit {
+    margin-top: 16px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.footer-credit a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
 }
 
 /* Table Styles - Modernized */
@@ -362,7 +386,8 @@ button:hover {
     .controls,
     .print-div,
     .print-button,
-    #clearBtn {
+    #clearBtn,
+    .footer-credit {
         display: none !important;
     }
 
@@ -446,6 +471,12 @@ button:hover {
         border: 1px solid #999;
     }
 
+    .signature-line {
+        height: 18px;
+        border-bottom: 1px solid #000;
+        margin-top: 2px;
+    }
+
     /* LOGOS - Visible and Balanced */
     .logo {
         display: block;
@@ -493,9 +524,7 @@ button:hover {
     .timecard-hours ol {
         margin: 0;
         padding-left: 15px;
-        column-count: 2;
-        /* KEY CHANGE: Split list into 2 columns */
-        column-gap: 15px;
+        /* Reverting to stacked/single column */
     }
 
     .timecard-hours li {
@@ -537,8 +566,8 @@ button:hover {
         /* Good readability */
         padding: 1px 4px;
         border: 1px solid #000;
-        height: 17px;
-        /* Fixed efficient height */
+        height: 21px;
+        /* Increased height for balance */
         line-height: 1.1;
     }
 
