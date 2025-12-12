@@ -175,7 +175,7 @@ section {
 .show-ol {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
 }
 
@@ -536,19 +536,20 @@ button:hover {
     }
 
     .show-ol {
-        display: block;
-        /* Stack text inside LI if needed, or keep flex */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .left-text {
-        display: block;
         font-weight: normal;
+        flex: 1;
+        padding-right: 8px;
     }
 
     .right-text {
-        display: block;
         font-weight: bold;
-        float: right;
+        white-space: nowrap;
     }
 
 
